@@ -1,0 +1,29 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "Second hexlet project / difference calculator",
+  "main": "gendiff.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arguzspb/frontend-project-lvl2.git"
+  },
+  "keywords": [
+    "arguzspb"
+  ],
+  "author": "KrukDO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arguzspb/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/Arguzspb/frontend-project-lvl2#readme",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "dependencies": {
+    "commander": "^9.4.0"
+  }
+}

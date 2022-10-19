@@ -1,11 +1,14 @@
 import { readFileSync } from 'fs';
-import path from 'path';
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
 import _ from 'lodash';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const getAbsolutePath = (fileName) => path
+  .join(`${__dirname}`, '..', '__fixtures__', fileName);
 const getFileData = (filepath) => readFileSync(filepath, 'utf-8');
 const toParseData = (data) => JSON.parse(data);
-const getAbsolutePath = (fileName) => path
-  .resolve('/home/dmitriy/programming/frontend-project-lvl2/src', fileName);
 
 const gendiff = (filepath1, filepath2) => {
   const absPath1 = getAbsolutePath(filepath1);
@@ -14,7 +17,7 @@ const gendiff = (filepath1, filepath2) => {
   const fileDataB = toParseData(getFileData(absPath2));
   const keysA = _.keys(fileDataA);
   const keysB = _.keys(fileDataB);
-  const allKeys = _.union(keysA, keysB);
+  const allKeys = _.union(keysA, keysB).sort();
   let result = '';
   const operatorsMap = {
     unchanged: ' ',
@@ -26,14 +29,14 @@ const gendiff = (filepath1, filepath2) => {
 
   allKeys.forEach((key) => {
     if (fileDataA[key] === fileDataB[key]) {
-      result += `${indent}${operatorsMap.unchanged} ${key}:${fileDataA[key]}\n`;
+      result += `${indent}${operatorsMap.unchanged} ${key}: ${fileDataA[key]}\n`;
     } else if (!_.has(fileDataA, key)) {
-      result += `${indent}${operatorsMap.added} ${key}:${fileDataB[key]}\n`;
+      result += `${indent}${operatorsMap.added} ${key}: ${fileDataB[key]}\n`;
     } else if (!_.has(fileDataB, key)) {
-      result += `${indent}${operatorsMap.deleted} ${key}:${fileDataA[key]}\n`;
+      result += `${indent}${operatorsMap.deleted} ${key}: ${fileDataA[key]}\n`;
     } else if (fileDataA[key] !== fileDataB[key]) {
-      result += `${indent}${operatorsMap.changed} ${key}:${fileDataA[key]}\n`;
-      result += `${indent}${operatorsMap.added} ${key}:${fileDataB[key]}\n`;
+      result += `${indent}${operatorsMap.changed} ${key}: ${fileDataA[key]}\n`;
+      result += `${indent}${operatorsMap.added} ${key}: ${fileDataB[key]}\n`;
     }
   });
   return `{\n${result}}`;

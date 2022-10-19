@@ -20,4 +20,3 @@ jobs:
       
       - name: lint and jest tests
         run: |
-          make lint

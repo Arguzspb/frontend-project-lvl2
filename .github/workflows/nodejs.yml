@@ -18,10 +18,13 @@ jobs:
       - name: Install
         run: make install
       
-      - name: lint and jest tests
-        run: |
-          make lint
-          make test
+      - name: lint check
+        run: make lint
+
+      - name: run tests
+        run: make test
+
+        - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{secrets.MY_SECRET}}

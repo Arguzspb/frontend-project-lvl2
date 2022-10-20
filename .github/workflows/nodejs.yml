@@ -22,4 +22,10 @@ jobs:
         run: |
           make lint
           make test
-          
+        uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{secrets.MY_SECRET}}
+        with:
+          coverageCommand: make test-coverage
+          debug: true
+

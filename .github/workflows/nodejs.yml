@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-        
+
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -15,12 +15,17 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+
       - name: Install
         run: make install
+
       - name: lint check
         run: make lint
+
       - name: run tests
         run: make test
+
+      - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{secrets.MY_SECRET}}

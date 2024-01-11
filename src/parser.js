@@ -8,7 +8,7 @@ const parseData = (data, extention) => {
     case 'yaml':
       return yaml.load(data, 'utf8');
     default:
-      return `Error! ${extention} unknown format.`;
+      return `Error! ${extention} unknown format`;
   }
 };
 

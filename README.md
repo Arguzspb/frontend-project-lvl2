@@ -17,6 +17,6 @@
 
 [![asciicast](https://asciinema.org/a/wljiTxm7euq9YbiS43yNNEktf.svg)]( https://asciinema.org/a/wljiTxm7euq9YbiS43yNNEktf)
 
-### Пример работы с плоскими объектами:
+### Пример работы с дефолтным форматом:
 
-[![asciicast](https://asciinema.org/a/RmCx3asqVcBIBgcG7MeQdQsoD.svg)](https://asciinema.org/a/RmCx3asqVcBIBgcG7MeQdQsoD)
+[![asciicast](https://asciinema.org/a/T74pLYZBlnJXjmrd9a1PJGvqP.svg)](https://asciinema.org/a/T74pLYZBlnJXjmrd9a1PJGvqP)

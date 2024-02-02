@@ -17,6 +17,10 @@
 
 [![asciicast](https://asciinema.org/a/wljiTxm7euq9YbiS43yNNEktf.svg)]( https://asciinema.org/a/wljiTxm7euq9YbiS43yNNEktf)
 
-### Пример работы с дефолтным форматом:
+### Пример работы с форматом stylish:
 
 [![asciicast](https://asciinema.org/a/T74pLYZBlnJXjmrd9a1PJGvqP.svg)](https://asciinema.org/a/T74pLYZBlnJXjmrd9a1PJGvqP)
+
+### Пример работы с форматом plain:
+
+[![asciicast](https://asciinema.org/a/49jk2F76H1R2SAvDQIEUsi03k.svg)](https://asciinema.org/a/49jk2F76H1R2SAvDQIEUsi03k)

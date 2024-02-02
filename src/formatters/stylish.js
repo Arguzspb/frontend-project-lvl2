@@ -28,9 +28,10 @@ const stylish = (diff, depth = 1) => {
       case 'updated':
         return `${indent(depth)}- ${item.key}: ${stringify(item.value1, depth)}\n${indent(depth)}+ ${item.key}: ${stringify(item.value2, depth)}`;
       default:
-        throw new Error('fuck this shit!');
+        throw new Error(`Error! ${item.type} unknown format!`);
     }
   });
   return ['{', ...lines, `${bracketIndent(depth)}}`].join('\n');
 };
+
 export default stylish;

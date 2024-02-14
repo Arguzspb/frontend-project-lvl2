@@ -16,14 +16,14 @@ json
 stylish
 For more detailed see examples
 
-### System requirements
+### System requirements:
 
 - bash / zsh
 - Make
 - Git
 - Node.js
 
-### Installation
+### Installation:
 
 To install, run the following commands:
 
@@ -32,6 +32,7 @@ git clone git@github.com:Arguzspb/frontend-project-lvl2.git
 cd frontend-project-lvl2
 make install
 sudo npm link
+```
 
 ### To get help information, run the following commands:
 

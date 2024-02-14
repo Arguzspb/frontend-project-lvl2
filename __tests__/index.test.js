@@ -9,18 +9,25 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 const stylish = readFile('stylishResult.txt');
 const plain = readFile('plainResult.txt');
+const json = readFile('jsonResult.txt');
 
 describe('testing all formates', () => {
-  test('stylish format, json files', () => {
+  it('stylish format, json files', () => {
     expect(gendiff('file1.json', 'file2.json')).toEqual(stylish);
   });
-  test('stylish format, yaml files', () => {
+  it('stylish format, yaml files', () => {
     expect(gendiff('file1.yml', 'file2.yml')).toEqual(stylish);
   });
-  test('plain format, json files', () => {
+  it('plain format, json files', () => {
     expect(gendiff('file1.json', 'file2.json', 'plain')).toEqual(plain);
   });
-  test('plain format, yaml files', () => {
+  it('plain format, yaml files', () => {
     expect(gendiff('file1.yml', 'file2.yml', 'plain')).toEqual(plain);
+  });
+  it('json format, json files', () => {
+    expect(gendiff('file1.json', 'file2.json', 'json')).toEqual(json);
+  });
+  it('json format, yaml files', () => {
+    expect(gendiff('file1.yml', 'file2.yml', 'json')).toEqual(json);
   });
 });

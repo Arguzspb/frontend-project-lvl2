@@ -18,7 +18,7 @@ const plain = (diff, path = '') => {
         case 'added':
           return `Property '${currentPath}' was added with value: ${checkValue(item.value)}`;
         case 'updated':
-          return `Property '${currentPath}' was updated. From ${checkValue(item.value1)} to ${checkValue(item.value2)}`;
+          return `Property '${currentPath}' was updated. From ${checkValue(item.oldValue)} to ${checkValue(item.newValue)}`;
         case 'removed':
           return `Property '${currentPath}' was removed`;
         case 'nested':
@@ -30,31 +30,4 @@ const plain = (diff, path = '') => {
   return [...lines].join('\n');
 };
 
-// [
-// {
-//     key: 'common',
-//     children: [
-//       [Object], [Object],
-//       [Object], [Object],
-//       [Object], [Object],
-//       [Object]
-//     ],
-//     type: 'nested'
-//   },
-//   {
-//     key: 'group1',
-//     children: [ [Object], [Object], [Object] ],
-//     type: 'nested'
-//   },
-//   {
-//     key: 'group2',
-//     value: { abc: 12345, deep: [Object] },
-//     type: 'removed'
-//   },
-//   {
-//     key: 'group3',
-//     value: { deep: [Object], fee: 100500 },
-//     type: 'added'
-//   }
-// ]
 export default plain;

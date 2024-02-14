@@ -26,7 +26,7 @@ const stylish = (diff, depth = 1) => {
       case 'unchanged':
         return `${indent(depth)}  ${item.key}: ${stringify(item.value, depth)}`;
       case 'updated':
-        return `${indent(depth)}- ${item.key}: ${stringify(item.value1, depth)}\n${indent(depth)}+ ${item.key}: ${stringify(item.value2, depth)}`;
+        return `${indent(depth)}- ${item.key}: ${stringify(item.oldValue, depth)}\n${indent(depth)}+ ${item.key}: ${stringify(item.newValue, depth)}`;
       default:
         throw new Error(`Error! ${item.type} unknown format!`);
     }

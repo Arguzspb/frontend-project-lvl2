@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: '16'
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -16,14 +16,18 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - name: Install
-        run: make install
-
+      - name: install
+        run: |
+          make install
+        env:
+          CI: true
       - name: lint check
-        run: make lint
+        run: |
+          make lint
 
       - name: run tests
-        run: make test
+        run: |
+          make test
 
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0

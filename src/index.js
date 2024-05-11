@@ -6,7 +6,7 @@ import parseData from './parser.js';
 
 const getExtension = (filepath) => path.extname(filepath).slice(1);
 
-const readFile = (filepath) => fs.readFileSync(path.resolve(filepath), { encoding: 'utf8', flag: 'r' });
+const readFile = (filepath) => fs.readFileSync(path.resolve(process.cwd(), '__fixtures__/', filepath));
 
 const gendiff = (filepath1, filepath2, formatType = 'stylish') => {
   const fileDataA = parseData(readFile(filepath1), getExtension(filepath1));

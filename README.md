@@ -2,7 +2,7 @@
 [![hexlet-check](https://github.com/Arguzspb/frontend-project-lvl2/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Arguzspb/frontend-project-lvl2/actions/workflows/hexlet-check.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/d7b2d993d23cca8b991b/maintainability)](https://codeclimate.com/github/Arguzspb/frontend-project-lvl2/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d7b2d993d23cca8b991b/test_coverage)](https://codeclimate.com/github/Arguzspb/frontend-project-lvl2/test_coverage)
-[![linter](https://github.com/Arguzspb/frontend-project-lvl2/actions/workflows/linter.yml/badge.svg)](https://github.com/Arguzspb/frontend-project-lvl2/actions/workflows/linter.yml)
+[![eslint and test check](https://github.com/Arguzspb/frontend-project-lvl2/actions/workflows/test&eslint.yml/badge.svg)](https://github.com/Arguzspb/frontend-project-lvl2/actions/workflows/test&eslint.yml)
 
 ## Difference calculator
 

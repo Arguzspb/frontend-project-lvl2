@@ -9,10 +9,9 @@ const getExtension = (filepath) => path.extname(filepath).slice(1);
 const readFile = (filepath) => fs.readFileSync(path.resolve(process.cwd(), '__fixtures__/', filepath));
 
 const gendiff = (filepath1, filepath2, formatType = 'stylish') => {
-  const fileDataA = parseData(readFile(filepath1), getExtension(filepath1));
-  const fileDataB = parseData(readFile(filepath2), getExtension(filepath2));
-  const diffTree = buildDiff(fileDataA, fileDataB);
-  const formatedDiff = formatter(diffTree, formatType);
-  return formatedDiff;
+  const fileDataOne = parseData(readFile(filepath1), getExtension(filepath1));
+  const fileDataTwo = parseData(readFile(filepath2), getExtension(filepath2));
+  const diffTree = buildDiff(fileDataOne, fileDataTwo);
+  return formatter(diffTree, formatType);
 };
 export default gendiff;

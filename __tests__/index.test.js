@@ -12,6 +12,9 @@ const plain = readFile('plainResult.txt');
 const json = readFile('jsonResult.txt');
 
 describe('testing all formates', () => {
+  it('default format', () => {
+    expect(gendiff('file1.json', 'file2.yml', 'stylish')).toEqual(stylish);
+  });
   it('stylish format, json files', () => {
     expect(gendiff('file1.json', 'file2.json')).toEqual(stylish);
   });
